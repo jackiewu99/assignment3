@@ -27,6 +27,21 @@ function addR() {
 //Add a column
 function addC() {
     numCols = numCols + 1;
+
+    if(numCols === 1 && numRows === 0)
+    {
+        numRows = 1;
+        var col = aGrid.insertRow(0);
+        document.querySelector("tr").appendChild(document.createElement("td"));
+        return;
+    }
+
+    //var allRows = document.querySelectorAll("td");
+    for(let i = 0;i < numRows;i++)
+    {
+        document.querySelectorAll("tr")[i].appendChild(document.createElement("td"));
+    }
+    
 }
 
 //Remove a row
