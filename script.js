@@ -5,7 +5,6 @@ let colorSelected;
 //Add a row
 function addR() {
     numRows = numRows + 1;
-
     var aGrid = document.getElementById("grid");
 
 
@@ -27,6 +26,7 @@ function addR() {
 //Add a column
 function addC() {
     numCols = numCols + 1;
+    var aGrid = document.getElementById("grid");
 
     if(numCols === 1 && numRows === 0)
     {
@@ -46,12 +46,17 @@ function addC() {
 
 //Remove a row
 function removeR() {
-    document.getElementById("grid").deleteRow(0);
+    if(numRows === 0 && numCols ===0)
+    {
+        return;
+    }
     numRows = numRows - 1;
     if(numRows === 0)
     {
         numCols = 0
     }
+    document.getElementById("grid").deleteRow(0);
+
 }
 //Remove a column
 function removeC() {
