@@ -36,7 +36,6 @@ function addC() {
         return;
     }
 
-    //var allRows = document.querySelectorAll("td");
     for(let i = 0;i < numRows;i++)
     {
         document.querySelectorAll("tr")[i].appendChild(document.createElement("td"));
@@ -51,16 +50,30 @@ function removeR() {
         return;
     }
     numRows = numRows - 1;
+    document.getElementById("grid").deleteRow(0);
     if(numRows === 0)
     {
         numCols = 0
     }
-    document.getElementById("grid").deleteRow(0);
 
 }
 //Remove a column
 function removeC() {
-    alert("Clicked Remove Col")
+    if(numRows === 0 && numCols ===0)
+    {
+        return;
+    }
+    numCols = numCols - 1;
+
+    for(let i = 0;i < numRows;i++)
+    {
+        let deleteCol = document.querySelectorAll("tr")[i]
+        deleteCol.removeChild(deleteCol.lastElementChild)
+    }
+    if(numCols === 0)
+    {
+        numRows = 0
+    }
 }
 //sets global var for selected color
 function selected(){
