@@ -96,7 +96,12 @@ function clearAll(){
         }
 }
 
-
 function fillU(){
-    alert("Clicked Fill All Uncolored")
+    for(let i = 0; i < numRows * numCols;i++)
+    {
+        if(document.querySelectorAll("tr td")[i].style.backgroundColor === "white")
+        {
+            document.querySelectorAll("tr td")[i].style.backgroundColor = colorSelected;
+        }
+    }
 }
