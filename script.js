@@ -2,6 +2,7 @@ let numRows = 0;
 let numCols = 0;
 let colorSelected; 
 
+
 //Add a row
 function addR() {
     numRows = numRows + 1;
@@ -82,7 +83,10 @@ function selected(){
 }
 
 function fill(){
-    alert("Clicked Fill All")
+    for(let i = 0; i < numRows * numCols;i++)
+    {
+        document.querySelectorAll("tr td")[i].style.backgroundColor = colorSelected;
+    }
 }
 
 function clearAll(){
