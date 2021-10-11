@@ -15,6 +15,7 @@ function addR() {
         var row = aGrid.insertRow(0);
         let b =document.querySelector("tr").appendChild(document.createElement("td"));
         b.style.backgroundColor = "white"
+        b.onclick = click;
         return;
     }
 
@@ -23,6 +24,7 @@ function addR() {
     {
         let b = document.querySelector("tr").appendChild(document.createElement("td"));
         b.style.backgroundColor = "white"
+        b.onclick = click;
     }
 
 }
@@ -37,6 +39,7 @@ function addC() {
         var col = aGrid.insertRow(0);
         let b = document.querySelector("tr").appendChild(document.createElement("td"));
         b.style.backgroundColor = "white";
+        b.onclick = click;
         return;
     }
 
@@ -44,6 +47,7 @@ function addC() {
     {
         let b = document.querySelectorAll("tr")[i].appendChild(document.createElement("td"));
         b.style.backgroundColor = "white"
+        b.onclick = click;
     }
     
 }
@@ -110,4 +114,8 @@ function fillU(){
             document.querySelectorAll("tr td")[i].style.backgroundColor = colorSelected;
         }
     }
+}
+
+function click(){
+    this.style.backgroundColor = colorSelected;
 }
