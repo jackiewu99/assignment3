@@ -13,14 +13,16 @@ function addR() {
     {
         numCols = 1;
         var row = aGrid.insertRow(0);
-        document.querySelector("tr").appendChild(document.createElement("td"));
+        let b =document.querySelector("tr").appendChild(document.createElement("td"));
+        b.style.backgroundColor = "white"
         return;
     }
 
     var row = aGrid.insertRow(0);
     for(let i = 0;i < numCols;i++)
     {
-        document.querySelector("tr").appendChild(document.createElement("td"));
+        let b = document.querySelector("tr").appendChild(document.createElement("td"));
+        b.style.backgroundColor = "white"
     }
 
 }
@@ -33,13 +35,15 @@ function addC() {
     {
         numRows = 1;
         var col = aGrid.insertRow(0);
-        document.querySelector("tr").appendChild(document.createElement("td"));
+        let b = document.querySelector("tr").appendChild(document.createElement("td"));
+        b.style.backgroundColor = "white";
         return;
     }
 
     for(let i = 0;i < numRows;i++)
     {
-        document.querySelectorAll("tr")[i].appendChild(document.createElement("td"));
+        let b = document.querySelectorAll("tr")[i].appendChild(document.createElement("td"));
+        b.style.backgroundColor = "white"
     }
     
 }
@@ -97,9 +101,11 @@ function clearAll(){
 }
 
 function fillU(){
+    
     for(let i = 0; i < numRows * numCols;i++)
     {
-        if(document.querySelectorAll("tr td")[i].style.backgroundColor === "white")
+        let a = document.querySelectorAll("tr td")[i].style.backgroundColor
+        if(a === "white") 
         {
             document.querySelectorAll("tr td")[i].style.backgroundColor = colorSelected;
         }
