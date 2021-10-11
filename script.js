@@ -90,8 +90,12 @@ function fill(){
 }
 
 function clearAll(){
-    alert("Clicked Clear All")
+        for(let i = 0; i < numRows * numCols;i++)
+        {
+            document.querySelectorAll("tr td")[i].style.backgroundColor = "white";
+        }
 }
+
 
 function fillU(){
     alert("Clicked Fill All Uncolored")
